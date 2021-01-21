@@ -1,0 +1,16 @@
+.nav-bar {
+  height: 50px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ee1515;
+  position: absolute;
+}
+
+.nav-bar a img {
+  height: 30px;
+  width: 110px;
+}

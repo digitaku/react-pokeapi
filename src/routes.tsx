@@ -7,8 +7,12 @@ function Router() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/Description" />
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/pokemon/:name">
+          <Details />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
