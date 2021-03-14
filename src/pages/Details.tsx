@@ -1,18 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
 
-import Header from "../components/Header";
 import api from "../services/api";
 import capitalize from "../utils/capitalize-string";
 import getColorType from "../utils/color-type";
 
 import "../styles/pages/details.css";
-
-interface Param {
-  name: string;
-}
 
 interface Pokemon {
   id: number;
@@ -32,18 +26,20 @@ interface Pokemon {
     };
   };
 }
-function Details() {
-  const params = useParams<Param>();
+
+interface Props {
+  name: string;
+}
+function Details(name: Props) {
   const [pokemon, setPokemon] = useState<Pokemon>();
   useEffect(() => {
-    api.get(`pokemon/${params.name}`).then((response) => {
+    api.get(`pokemon/${name.name}`).then((response) => {
       setPokemon(response.data);
     });
-  }, [params.name]);
+  }, [name]);
   if (pokemon == null) return <h1>Carregando</h1>;
   return (
     <>
-      <Header />
       <div className="pokemon-container">
         <div
           className="pokemon"

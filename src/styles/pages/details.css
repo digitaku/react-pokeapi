@@ -1,7 +1,6 @@
 .pokemon-container {
   height: 100%;
   width: 100%;
-  background-color: #fcfcfc;
   display: flex;
 
   justify-content: center;
