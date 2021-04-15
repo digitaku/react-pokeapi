@@ -9,24 +9,6 @@ import "../styles/pages/home.css";
 import capitalize from "../utils/capitalize-string";
 import Details from "./Details";
 
-interface PokemonDetails {
-  id: number;
-  name: string;
-  height: number;
-  weight: number;
-  types: Array<{
-    type: {
-      name: string;
-    };
-  }>;
-  sprites: {
-    other: {
-      dream_world: {
-        front_default: string;
-      };
-    };
-  };
-}
 
 interface PokemonResponse {
   count: number;
